@@ -1,0 +1,60 @@
+﻿@model DemoProject.Models.Inventory
+@{
+	Layout = "~/Views/Shared/Master.cshtml";
+
+}
+
+<div class="table-responsive" >
+	<form method="post" action="/Home/Edit">
+		@Html.AntiForgeryToken()
+		<table class="table table-bordered">
+		<tbody>
+
+			<tr>
+				<td>Name</td>
+				<td>
+					<input type="hidden" name="No" value="@Model.No" />
+					<input type="text" name="Name" value="@Model.Name"/>
+				</td>
+				<td style="color:red">@Html.ValidationMessage("Name")</td>
+			</tr>
+
+			<tr>
+				<td>Description</td>
+				<td>
+					<input type="text" name="Description"  value="@Model.Description"/>
+				</td>
+				<td style="color:red">@Html.ValidationMessage("Description")</td>
+			</tr>
+
+			<tr>
+				<td>Quantity</td>
+				<td>
+					<input type="number" name="Quantity" value="@Model.Quantity"/>
+				</td>
+				<td style="color:red">@Html.ValidationMessage("Quantity")</td>
+			</tr>
+
+			<tr>
+				<td>Price</td>
+				<td>
+					<input type="number" name="Price" value="@Model.Price"/>
+				</td>
+				<td style="color:red">@Html.ValidationMessage("Price")</td>
+			</tr>
+
+			<tr>
+				<td colspan="3">
+				
+					<input type="submit" name="btnUpdate" value="Update Record" /> 
+				
+			</td>
+			</tr>
+		</tbody>
+	</table>
+	<hr />
+	<p class = "alert-danger">
+		@ViewBag.Message
+	</p>
+	</form>
+</div>

@@ -1,0 +1,53 @@
+﻿@{
+	Layout = "~/Views/Shared/Master.cshtml";
+
+}
+
+<div class="table-responsive" >
+	<form method="post" action="/Home/Create">
+		<table>
+		<tbody>
+
+			<tr>
+				<td>Name</td>
+				<td>
+					<input type="text" name="Name"/>
+				</td>
+				<td style="color:red">@Html.ValidationMessage("Name")</td>
+			</tr>
+
+			<tr>
+				<td>Description</td>
+				<td>
+					<input type="text" name="Description" />
+				</td>
+				<td style="color:red">@Html.ValidationMessage("Description")</td>
+			</tr>
+
+			<tr>
+				<td>Quantity</td>
+				<td>
+					<input type="number" name="Quantity" />
+				</td>
+				<td style="color:red">@Html.ValidationMessage("Quantity")</td>
+			</tr>
+
+			<tr>
+				<td>Price</td>
+				<td>
+					<input type="number" name="Price" />
+				</td>
+				<td style="color:red">@Html.ValidationMessage("Price")</td>
+			</tr>
+
+			<tr>
+				<td colspan="3">
+				<center>
+					<input type="submit" name="btnCreate" value="Add Record" /> 
+				</center>
+			</td>
+			</tr>
+		</tbody>
+	</table>
+	</form>
+</div>

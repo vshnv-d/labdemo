@@ -1,0 +1,41 @@
+﻿@model List<DemoProject.Models.Inventory>
+@{
+	Layout = "~/Views/Shared/Master.cshtml";
+}
+
+<h2>Welcome</h2>
+<div class="table-responsive" style="margin:60px">
+	<a href="/Home/Create" class="btn btn-primary">Add New Record</a>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>No</th>
+				<th>Name</th>
+				<th>Description</th>
+				<th>Quantity</th>
+				<th>Price</th>
+				<th>Edit</th>
+				<th>Delete</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach(var inventory in Model)
+			{
+				<tr>
+					<td>@inventory.No</td>
+					<td>@inventory.Name</td>
+					<td>@inventory.Description</td>
+					<td>@inventory.Quantity</td>
+					<td>@inventory.Price</td>
+					<td>
+						<a href ="/Home/Edit/@inventory.No" class="btn btn-warning">Edit</a>
+
+					</td>
+					<td>
+						<a href = "/Home/Delete/@inventory.No" class="btn btn-danger">Delete</a>
+					</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+</div>
